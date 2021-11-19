@@ -6,7 +6,7 @@ const flash = require("connect-flash");
 
 const passport = require("passport");
 const User = require("./models/user");
-const routes = require("./routes/cakes");
+const cakeRoutes = require("./routes/cakes");
 const userRoutes = require("./routes/user");
 const session = require("express-session");
 const GoogleStrategy = require("passport-google-oauth20").Strategy;
@@ -93,24 +93,13 @@ app.use(function (req, res, next) {
   next();
 });
 
-app.use("/products", routes);
+app.use("/products", cakeRoutes);
+
 app.use("/", userRoutes);
+
 app.get("/", (req, res) => {
   res.render("index");
 });
-app.get(
-  "/auth/google",
-  passport.authenticate("google", { scope: ["profile", "email"] })
-);
-
-app.get(
-  "/auth/google/profile",
-  passport.authenticate("google", { failureRedirect: "/login" }),
-  function (req, res) {
-    // Successful authentication, redirect to secrets.
-    res.redirect("/profile");
-  }
-);
 
 app.listen(port, () => {
   console.log(`Server running on port ${port}`);

@@ -77,7 +77,7 @@
                     <tr>
                         
                         <th>Customer</th>
-                        <th>Location</th>
+                        <th>Email</th>
                         <th>Orders</th>						
                         <th>Status</th>						
                         <th>Net Amount</th>
@@ -91,7 +91,8 @@
                     
                         
                         <td>{{user.firstName}} {{user.lastName}}</td>
-                        <td>{{user.city}}, {{user.province}}</td>
+                        {{!-- <td>{{user.city}}, {{user.province}}</td> --}}
+                        <td>{{user.email}}</td>
                         <td>cake</td>                        
                         <td><span class="status text-success">&bull;</span> Delivered</td>
                         <td>$254</td>

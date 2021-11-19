@@ -19,7 +19,7 @@ const cakeSchema = new mongoose.Schema(
       {
         token: {
           type: String,
-          required: true,
+          //required: true,
         },
       },
     ],
@@ -42,7 +42,7 @@ const cakeSchema = new mongoose.Schema(
 cakeSchema.methods.generateAuthToken = async function () {
   const cake = this;
 
-  const token = jwt.sign({ _id: cake._id.toString() }, "thisismycakewish");
+  const token = jwt.sign({ _id: cake._id.toString() }, process.env.SECRET_PASS);
 
   cake.tokens = cake.tokens.concat({ token });
   await cake.save();

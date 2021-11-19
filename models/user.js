@@ -6,19 +6,19 @@ const jwt = require("jsonwebtoken");
 const userSchema = new mongoose.Schema({
   firstName: {
     type: String,
-    //required: true,
+    required: true,
   },
   lastName: {
     type: String,
-    //required: true,
+    required: true,
   },
   email: {
     type: String,
-    //required: true,
+    required: true,
   },
   password: {
     type: String,
-    //required: true,
+
     minlength: 7,
     trim: true,
     validate(value) {
@@ -30,15 +30,12 @@ const userSchema = new mongoose.Schema({
   },
   city: {
     type: String,
-    //required: true,
   },
   province: {
     type: String,
-    //required: true,
   },
   zip: {
     type: String,
-    //required: true,
   },
   date: {
     type: Date,

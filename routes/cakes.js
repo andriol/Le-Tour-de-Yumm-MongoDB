@@ -1,13 +1,13 @@
 const express = require("express");
 const cakeController = require("../controllers/cakeController");
 const router = express.Router();
+const upload = require("../middleware/upload");
 const auth = require("../middleware/auth");
 
 router.get("/", cakeController.view);
-router.post("/", cakeController.save);
-router.get("/:id", auth, cakeController.getSingle);
-router.put("/:id", auth, cakeController.update);
-router.delete("/:id", auth, cakeController.delete);
-router.post("/:id/image", auth, cakeController.image);
+router.post("/", upload, cakeController.save);
+router.get("/:id", cakeController.getSingle);
+router.put("/:id", cakeController.update);
+router.delete("/:id", cakeController.delete);
 
 module.exports = router;

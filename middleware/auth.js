@@ -1,10 +1,10 @@
 const jwt = require("jsonwebtoken");
 const Cake = require("../models/cakes");
-require("dotenv").config();
+
 const auth = async (req, res, next) => {
   try {
     const token = req.header("Authorization").replace("Bearer ", "");
-    const decoded = jwt.verify(token, proces.env.SECRET_PASS);
+    const decoded = jwt.verify(token, process.env.SECRET_PASS);
     const cake = await Cake.findOne({
       _id: decoded._id,
       "tokens.token": token,
