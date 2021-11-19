@@ -1,0 +1,107 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="/public/css/styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css"
+    />
+  </head>
+  <body>
+ {{>header}}
+
+    <div id="wrap">
+      <ul id="slider">
+        <li class="slide-item"><img
+            class="image-one"
+            src="/images/cake-one.jpeg"
+            alt="image"
+          /></li>
+        <li class="slide-item"><img
+            class="image-two"
+            src="/images/cake-two.jpeg"
+            alt="image"
+          /></li>
+        <li class="slide-item"><img
+            class="image-three"
+            src="/images/cake-three.jpeg"
+            alt="image"
+          /></li>
+      </ul>
+    </div>
+
+    <section class="main__section-testimonials">
+      <div class="main__section-header">
+        <div class="main__section-title">CUSTOMERS LOVE Le Tour De Yumm!</div>
+      </div>
+      <div class="main__testimonials">
+        <div class="main__testimonials-left">
+          <img class="main__testimonials-quote" src="/icons/icons8-quote-50.png" alt=""/>
+          <p>Not only these goodies are plant based so bye bye lactose
+            intolerance but they are as delicious as they are beautiful! You
+            really feel bad to eat them but you really feel good after! Your
+            pleasure without the guilt! Love, love, love!</p>
+
+          <div class="main__comment-footer">
+            <div class="main__comment-avatars"></div>
+            <div>
+              <h2>Manuela Gjoka</h2>
+              <h3>Digital Marketing</h3>
+            </div>
+          </div>
+        </div>
+        <div class="main__testimonials-center">
+           <img class="main__testimonials-quote" src="/icons/icons8-quote-50.png" alt=""/>
+          <p>Ina was such a pleasure to work with. Not only was she so
+            accommodating, but she had a cake ready to go for my sister's
+            birthday in less than 24 hours! It was absolutely delicious and
+            beautiful. You could not even tell it was keto! Thank you so much
+            Ina, we will definitely be ordering from you again!</p>
+          <div class="main__comment-footer">
+            <div class="main__comment-avatars"></div>
+            <div>
+              <h2>Pamela Piccone</h2>
+              <h3>UX Designer</h3>
+            </div>
+          </div>
+        </div>
+        <div class="main__testimonials-right">
+           <img class="main__testimonials-quote" src="/icons/icons8-quote-50.png" alt=""/>
+          <p>My husband and I were looking for keto friendly cakes and we came
+            across this bakery, by far the most delicious cakes we ever had.
+            Thank you so so much!!!</p>
+          <div class="main__comment-footer">
+            <div class="main__comment-avatars"></div>
+            <div>
+              <h2>Noran Johnson</h2>
+              <h3>Pharmacist</h3>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+   
+    {{>footer}}
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"
+    >
+    </script>
+
+    <script type="text/javascript">
+    $(function(){
+  $("#slider").slick({
+    speed: 1000,
+    dots: true,
+    prevArrow: '<button class="slide-arrow prev-arrow"></button>',
+    nextArrow: '<button class="slide-arrow next-arrow"></button>'
+  });
+});
+    </script>
+  </body>
+</html> 

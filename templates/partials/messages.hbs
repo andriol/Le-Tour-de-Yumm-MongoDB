@@ -1,0 +1,23 @@
+<html>
+    <head>
+
+    </head>
+    <body>
+           {{#if error_msg}}
+     <div class="alert alert-warning alert-dismissible fade show" role="alert">
+  <strong>Please log in to view this page!</strong>
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  {{/if}}
+       {{#if success_msg}}
+     <div class="alert alert-success alert-dismissible fade show" role="alert">
+  <strong>You are now registered and can log in!</strong>
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  {{/if}}
+  {{#if logout_msg}}
+     <div class="alert alert-success alert-dismissible fade show" role="alert">
+  <strong>You are logged out!</strong>
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  {{/if}}
+</div>   
+    </body>
+</html>
