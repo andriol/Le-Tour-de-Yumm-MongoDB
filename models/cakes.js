@@ -15,14 +15,7 @@ const cakeSchema = new mongoose.Schema(
     categories: {
       type: String,
     },
-    tokens: [
-      {
-        token: {
-          type: String,
-          //required: true,
-        },
-      },
-    ],
+
     image: {
       type: String,
     },
@@ -39,16 +32,6 @@ const cakeSchema = new mongoose.Schema(
   }
 );
 
-cakeSchema.methods.generateAuthToken = async function () {
-  const cake = this;
-
-  const token = jwt.sign({ _id: cake._id.toString() }, process.env.SECRET_PASS);
-
-  cake.tokens = cake.tokens.concat({ token });
-  await cake.save();
-
-  return token;
-};
 const Cakes = mongoose.model("Cakes", cakeSchema);
 
 module.exports = Cakes;

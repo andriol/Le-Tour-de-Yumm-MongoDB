@@ -26,7 +26,7 @@ router.get(
   upload,
   passport.authenticate("google", { failureRedirect: "/login" }),
   function (req, res) {
-    // Successful authentication, redirect to secrets.
+    // Successful authentication, redirect to profile.
     res.redirect("/profile");
   }
 );

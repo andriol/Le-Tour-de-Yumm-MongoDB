@@ -14,9 +14,7 @@ controller.save = async (req, res) => {
 
     await cake.save();
 
-    const token = await cake.generateAuthToken();
-    console.log(token);
-    res.status(201).send({ cake, token });
+    res.status(201).send(cake);
   } catch (err) {
     res.status(500).send(err);
   }
@@ -48,6 +46,7 @@ controller.update = async (req, res) => {
     const cake = await Cake.findByIdAndUpdate({ _id }, req.body, {
       new: true,
     });
+
     res.send(cake);
   } catch (err) {
     res.status(400).send(err);

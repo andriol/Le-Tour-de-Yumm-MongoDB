@@ -16,8 +16,8 @@ require("./db/mongoose");
 require("./middleware/passport")(passport);
 
 const port = process.env.PORT || 8081;
-
-const publicDirectoryPath = path.join(__dirname, "./public/");
+//templates
+const publicDirectoryPath = path.join(__dirname, "./public");
 const publicDirectory = path.join(__dirname, "./public/images");
 const viewsPath = path.join(__dirname, "./templates/views");
 const partialsPath = path.join(__dirname, "./templates/partials");
@@ -25,6 +25,7 @@ hbs.registerPartials(partialsPath);
 
 app.set("view engine", "hbs");
 app.set("views", viewsPath);
+//middleware
 app.use(express.static(publicDirectoryPath));
 app.use(express.static(publicDirectory));
 
@@ -93,13 +94,13 @@ app.use(function (req, res, next) {
   next();
 });
 
-app.use("/products", cakeRoutes);
-
-app.use("/", userRoutes);
-
 app.get("/", (req, res) => {
   res.render("index");
 });
+
+app.use("/", userRoutes);
+
+app.use("/products", cakeRoutes);
 
 app.listen(port, () => {
   console.log(`Server running on port ${port}`);
